@@ -1,0 +1,4 @@
+QS_spoof = if ([Start date]>=[quarter_now_start_date].[Date],
+Trim ("SD>=QN_SD"&if ([end date]<=[quarter_now+3_end_date].[Date], "Project active in rolling quarter - all in view","Starts in the future")),
+Trim("SD<QN+3_ED"&IF([end date]<=[quarter_now+3_end_date].[Date],"Project active in rolling quarter view - tail in view", "ended in the past"))
+)
